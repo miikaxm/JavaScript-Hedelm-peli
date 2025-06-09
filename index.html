@@ -8,9 +8,30 @@
 </head>
 <body>
     <h1>Hedelmäpeli</h1>
-    <div>
-        <h2 id="money">Rahaa: 50€</h2>
-        <h2 id="bet">Panos: 1€</h2>
+    <div style="background-color: lightgreen; width: 400px; text-align: center; margin-left: 200px;">
+        <h2 style="padding-top: 10px;" id="money">Rahaa: 50€</h2>
+        <h2 style="padding-bottom: 10px;" id="bet">Panos: 1€</h2>
+
+        <div style="display: flex; justify-content: center; gap: 20px; padding-bottom: 15px;">
+            <div style="display: flex; flex-direction: column; align-items: center; background-color: grey;">
+                <div style="width: 50px; height: 50px; background-color: #eee; border: 1px solid #ccc; margin-bottom: 5px; display: flex; align-items: center; justify-content: center;">
+                    <span id="betButton1" style="color: #bbb;"><img src="img/coin.png" alt="" style="border: none; width: 60px; padding: 0; margin: 0; padding-top: 7px;"></span>
+                </div>
+                <span>1€</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; background-color: grey">
+                <div style="width: 50px; height: 50px; background-color: #eee; border: 1px solid #ccc; margin-bottom: 5px; display: flex; align-items: center; justify-content: center;">
+                    <span id="betButton2"  style="color: #bbb;"><img src="img/coin.png" alt="" style="border: none; width: 60px; padding: 0; margin: 0; padding-top: 7px;"></span>
+                </div>
+                <span>2€</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; background-color: grey">
+                <div style="width: 50px; height: 50px; background-color: #eee; border: 1px solid #ccc; margin-bottom: 5px; display: flex; align-items: center; justify-content: center;">
+                    <span id="betButton3" style="color: #bbb;"><img src="img/coin.png" alt="" style="border: none; width: 60px; padding: 0; margin: 0; padding-top: 7px;"></span>
+                </div>
+                <span>3€</span>
+            </div>
+        </div>
     </div>
     <div>
         <img id="1" style="width: 100px;" src="img/symbol_1.png" alt="">
