@@ -7,39 +7,39 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hedelmäpeli</h1>
-    <div style="background-color: lightgreen; width: 400px; text-align: center; margin-left: 200px;">
-        <h2 style="padding-top: 10px;" id="money">Rahaa: 50€</h2>
-        <h2 style="padding-bottom: 10px;" id="bet">Panos: 1€</h2>
+    <div style="display: flex; justify-content: center; align-items: center; padding-top: 200px;">
+        <div style="background-color: grey; width: 1500px; margin: 0 auto; padding: 10px; border-radius: 5px;">
+            <h1>Hedelmäpeli</h1>
+            <h2 style="display: inline; padding-right: 30px;" id="money">Rahaa: 50€</h2>
+            <h2 style="display: inline;" id="bet">Panos: 1€</h2>
 
-        <div style="display: flex; justify-content: center; gap: 20px; padding-bottom: 15px;">
-            <div style="display: flex; flex-direction: column; align-items: center; background-color: grey;">
-                <div style="width: 50px; height: 50px; background-color: #eee; border: 1px solid #ccc; margin-bottom: 5px; display: flex; align-items: center; justify-content: center;">
-                    <span id="betButton1" style="color: #bbb;"><img src="img/coin.png" alt="" style="border: none; width: 60px; padding: 0; margin: 0; padding-top: 7px;"></span>
+            <div style="padding-top: 10px;" class="slot-machine">
+                <div class="reel" id="reel1">
+                    <img id="1" src="img/symbol_1.png" alt="Hedelmä 1">
                 </div>
-                <span>1€</span>
-            </div>
-            <div style="display: flex; flex-direction: column; align-items: center; background-color: grey">
-                <div style="width: 50px; height: 50px; background-color: #eee; border: 1px solid #ccc; margin-bottom: 5px; display: flex; align-items: center; justify-content: center;">
-                    <span id="betButton2"  style="color: #bbb;"><img src="img/coin.png" alt="" style="border: none; width: 60px; padding: 0; margin: 0; padding-top: 7px;"></span>
+                <div class="reel" id="reel2">
+                    <img id="2" src="img/symbol_2.png" alt="Hedelmä 2">
                 </div>
-                <span>2€</span>
-            </div>
-            <div style="display: flex; flex-direction: column; align-items: center; background-color: grey">
-                <div style="width: 50px; height: 50px; background-color: #eee; border: 1px solid #ccc; margin-bottom: 5px; display: flex; align-items: center; justify-content: center;">
-                    <span id="betButton3" style="color: #bbb;"><img src="img/coin.png" alt="" style="border: none; width: 60px; padding: 0; margin: 0; padding-top: 7px;"></span>
+                <div class="reel" id="reel3">
+                    <img id="3" src="img/symbol_3.png" alt="Hedelmä 3">
                 </div>
-                <span>3€</span>
+                <div class="reel" id="reel4">
+                    <img id="4" src="img/symbol_4.png" alt="Hedelmä 4">
+                </div>
             </div>
+
+            <div class="lock-buttons">
+                <button id="lockButton1" class="lockSingleButton">Lukitse</button>
+                <button id="lockButton2" class="lockSingleButton">Lukitse</button>
+                <button id="lockButton3" class="lockSingleButton">Lukitse</button>
+                <button id="lockButton4" class="lockSingleButton">Lukitse</button>
+            </div>
+
+            <button style="background-color: green; border: none; width: 700px; height: 25px; border-radius: 5px;margin-right: 10px; color: white;" id="playButton">Pyöräytä</button>
+            <button id="betButton" style="background-color: blue; border: none; width: 700px; height: 25px; border-radius: 5px; color: white;">Panos</button>
         </div>
     </div>
-    <div>
-        <img id="1" style="width: 100px;" src="img/symbol_1.png" alt="">
-        <img id="2" style="width: 100px;" src="img/symbol_2.png" alt="">
-        <img id="3" style="width: 100px;" src="img/symbol_3.png" alt="">
-        <img id="4" style="width: 100px;" src="img/symbol_4.png" alt="">
-        <button id="playButton">Pelaa</button>
-    </div>
+
     <script src="main.js"></script>
 </body>
 </html>
