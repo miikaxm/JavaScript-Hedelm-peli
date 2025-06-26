@@ -12,6 +12,8 @@ document.getElementById("lockButton4").addEventListener("click", lock4)
 
 let money = 50
 let bet = 1
+let canLock = false
+let LockOn = false
 
 const boxes = [
     { number: "1", value: 0, locked: false},
@@ -26,11 +28,13 @@ function update(){
     document.getElementById("bet").innerText = "Panos: " + bet + "€"
 
 
-    // // Maksu taulun päivitys
-    // document.getElementById("CherryPayout").innerText = bet*3 + "€"
-    // document.getElementById("GrapePayout").innerText = bet*4 + "€"
-    // document.getElementById("WatermelonPayout").innerText = bet*5 + "€"
-    // document.getElementById("ApplePayout").innerText = bet*6 + "€"
+    // Maksu taulun päivitys
+    document.getElementById("sevensPayout4x").innerText = bet*10 + "€"
+    document.getElementById("sevensPayout3x").innerText = bet*5 + "€"
+    document.getElementById("cherryPayout").innerText = bet*3 + "€"
+    document.getElementById("grapePayout").innerText = bet*4 + "€"
+    document.getElementById("melonPayout").innerText = bet*5 + "€"
+    document.getElementById("applePayout").innerText = bet*6 + "€"
 }
 
 function randomNumber(){
@@ -53,6 +57,15 @@ function roll() {
             let img = "img/symbol_" + boxes[i]["value"] + ".png"
             document.getElementById((i + 1).toString()).setAttribute("src", img)
         }
+
+        canLock = true
+
+        if (LockOn){
+            canLock = false
+            LockOn = false
+        }
+        
+        console.log(canLock)
         update()
         openLocks()
         checkWin()
@@ -84,28 +97,47 @@ function checkWin(){
     } else if (boxes[0]["value"] == 1 && boxes[1]["value"] == 1 && boxes[2]["value"] == 1 && boxes[3]["value"] == 1){
         money += bet*3
         console.log("Voitit neljällä kirsikalla yhteensä: " + bet*3)
-    }
+    } 
+        else {
+        let sevensCount = boxes.filter(box => box.value === 5).length;
+        if (sevensCount === 3) {
+            money += bet*5;
+            console.log("Voitit kolmella seiskalla yhteensä: " + bet*5)
+        }
+        }
     update()
 }
 
 function lock1(){
-    boxes[0]["locked"] = true
-    document.getElementById("lockButton1").innerHTML = "Lukittu"
+    if (canLock){
+        boxes[0]["locked"] = true
+        document.getElementById("lockButton1").innerHTML = "Lukittu"
+        LockOn = true
+    }
 }
 
 function lock2(){
-    boxes[1]["locked"] = true
-    document.getElementById("lockButton2").innerHTML = "Lukittu"
+    if (canLock){
+        boxes[1]["locked"] = true
+        document.getElementById("lockButton2").innerHTML = "Lukittu"
+        LockOn = true
+    }
 }
 
 function lock3(){
-    boxes[2]["locked"] = true
-    document.getElementById("lockButton3").innerHTML = "Lukittu"
+    if (canLock){
+        boxes[2]["locked"] = true
+        document.getElementById("lockButton3").innerHTML = "Lukittu"
+        LockOn = true
+    }
 }
 
 function lock4(){
-    boxes[3]["locked"] = true
-    document.getElementById("lockButton4").innerHTML = "Lukittu"
+    if (canLock){
+        boxes[3]["locked"] = true
+        document.getElementById("lockButton4").innerHTML = "Lukittu"
+        LockOn = true
+    }
 }
 
 function openLocks(){

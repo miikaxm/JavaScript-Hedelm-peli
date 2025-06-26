@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div style="display: flex; justify-content: center; align-items: center; padding-top: 200px;">
-        <div style="background-color: grey; width: 1500px; margin: 0 auto; padding: 10px; border-radius: 5px;">
+    <div style="display: flex; justify-content: center; align-items: center; padding-top: 30px;">
+        <div style="background-color: grey; width: 1500px; margin: 0 auto; padding: 20px; border-radius: 7px;">
+
+            <!-- Otsikko, saldo ja panos -->
             <h1>Hedelmäpeli</h1>
             <h2 style="display: inline; padding-right: 30px;" id="money">Rahaa: 50€</h2>
             <h2 style="display: inline;" id="bet">Panos: 1€</h2>
 
+            <!-- Arvottavat rullat -->
             <div style="padding-top: 10px;" class="slot-machine">
                 <div class="reel" id="reel1">
                     <img id="1" src="img/symbol_1.png" alt="Hedelmä 1">
@@ -28,6 +31,7 @@
                 </div>
             </div>
 
+            <!-- Lukitus napit -->
             <div class="lock-buttons">
                 <button id="lockButton1" class="lockSingleButton">Lukitse</button>
                 <button id="lockButton2" class="lockSingleButton">Lukitse</button>
@@ -35,8 +39,54 @@
                 <button id="lockButton4" class="lockSingleButton">Lukitse</button>
             </div>
 
+            <!-- Napit pyöräytykselle ja panoksen muuttamiselle -->
             <button style="background-color: green; border: none; width: 700px; height: 25px; border-radius: 5px;margin-right: 10px; color: white;" id="playButton">Pyöräytä</button>
             <button id="betButton" style="background-color: blue; border: none; width: 700px; height: 25px; border-radius: 5px; color: white;">Panos</button>
+
+            <!-- Maksutaulukko -->
+            <div style="padding-top: 20px;">
+                <div style="border-top: 2px solid #222;" class="maksurivi">
+                    <img style="padding-right: 10px;" src="img/symbol_5.png" alt="">
+                    <img style="padding-right: 10px;" src="img/symbol_5.png" alt="">
+                    <img style="padding-right: 10px;" src="img/symbol_5.png" alt="">
+                    <img src="img/symbol_5.png" alt="">
+                    <h1 id="sevensPayout4x" style="border: 2px solid #333; background-color: #e0e0e0; border-radius: 8px; padding: 8px 24px; display: inline-block; color: #333; margin-left: 20px;">10€</h1>
+                </div>
+                <div class="maksurivi">
+                    <img style="padding-right: 10px;" src="img/symbol_4.png" alt="">
+                    <img style="padding-right: 10px;" src="img/symbol_4.png" alt="">
+                    <img style="padding-right: 10px;" src="img/symbol_4.png" alt="">
+                    <img src="img/symbol_4.png" alt="">
+                    <h1 id="applePayout" style="border: 2px solid #333; background-color: #e0e0e0; border-radius: 8px; padding: 8px 24px; display: inline-block; color: #333; margin-left: 20px; width: 53px;">6€</h1>
+                </div>
+                <div class="maksurivi">
+                    <img style="padding-right: 10px;" src="img/symbol_3.png" alt="">
+                    <img style="padding-right: 10px;" src="img/symbol_3.png" alt="">
+                    <img style="padding-right: 10px;" src="img/symbol_3.png" alt="">
+                    <img src="img/symbol_3.png" alt="">
+                    <h1 id="melonPayout" style="border: 2px solid #333; background-color: #e0e0e0; border-radius: 8px; padding: 8px 24px; display: inline-block; color: #333; margin-left: 20px; width: 53px;">5€</h1>
+                </div>
+                <div class="maksurivi">
+                    <img style="padding-right: 10px;" src="img/symbol_2.png" alt="">
+                    <img style="padding-right: 10px;" src="img/symbol_2.png" alt="">
+                    <img style="padding-right: 10px;" src="img/symbol_2.png" alt="">
+                    <img src="img/symbol_2.png" alt="">
+                    <h1 id="grapePayout" style="border: 2px solid #333; background-color: #e0e0e0; border-radius: 8px; padding: 8px 24px; display: inline-block; color: #333; margin-left: 20px; width: 53px;">4€</h1>
+                </div>
+                <div class="maksurivi">
+                    <img style="padding-right: 10px;" src="img/symbol_1.png" alt="">
+                    <img style="padding-right: 10px;" src="img/symbol_1.png" alt="">
+                    <img style="padding-right: 10px;" src="img/symbol_1.png" alt="">
+                    <img src="img/symbol_1.png" alt="">
+                    <h1 id="cherryPayout" style="border: 2px solid #333; background-color: #e0e0e0; border-radius: 8px; padding: 8px 24px; display: inline-block; color: #333; margin-left: 20px; width: 53px;">3€</h1>
+                </div>
+                <div class="maksurivi">
+                    <img style="padding-right: 10px;" src="img/symbol_5.png" alt="">
+                    <img style="padding-right: 10px;" src="img/symbol_5.png" alt="">
+                    <img src="img/symbol_5.png" alt="">
+                    <h1 id="sevensPayout3x" style="border: 2px solid #333; background-color: #e0e0e0; border-radius: 8px; padding: 8px 24px; display: inline-block; color: #333; margin-left: 90px; width: 53px;">5€</h1>
+                </div>
+            </div>
         </div>
     </div>
 
