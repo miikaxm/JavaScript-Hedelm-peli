@@ -75,7 +75,7 @@ function roll() {
 function betSize() {
     if (bet == 3){
         bet = 1
-    } else {
+    } else if (LockOn == false) {
         bet += 1
     }
     update();
@@ -85,24 +85,30 @@ function checkWin(){
     if (boxes[0]["value"] == 5 && boxes[1]["value"] == 5 && boxes[2]["value"] == 5 && boxes[3]["value"] == 5){
         money += bet*10
         console.log("Voitit neljällä seiskalla yhteensä: " + bet*10)
+        canLock = false
     } else if (boxes[0]["value"] == 4 && boxes[1]["value"] == 4 && boxes[2]["value"] == 4 && boxes[3]["value"] == 4){
         money += bet*6
         console.log("Voitit neljällä omenalla yhteensä: " + bet*6)
+        canLock = false
     } else if (boxes[0]["value"] == 3 && boxes[1]["value"] == 3 && boxes[2]["value"] == 3 && boxes[3]["value"] == 3){
         money += bet*5
         console.log("Voitit neljällä meloonilla yhteensä: " + bet*5)
+        canLock = false
     } else if (boxes[0]["value"] == 2 && boxes[1]["value"] == 2 && boxes[2]["value"] == 2 && boxes[3]["value"] == 2){
         money += bet*4
         console.log("Voitit neljällä greipillä yhteensä: " + bet*4)
+        canLock = false
     } else if (boxes[0]["value"] == 1 && boxes[1]["value"] == 1 && boxes[2]["value"] == 1 && boxes[3]["value"] == 1){
         money += bet*3
         console.log("Voitit neljällä kirsikalla yhteensä: " + bet*3)
+        canLock = false
     } 
         else {
         let sevensCount = boxes.filter(box => box.value === 5).length;
         if (sevensCount === 3) {
             money += bet*5;
             console.log("Voitit kolmella seiskalla yhteensä: " + bet*5)
+            canLock = false
         }
         }
     update()
