@@ -73,9 +73,9 @@ function roll() {
 }
 
 function betSize() {
-    if (bet == 3){
+    if (bet == 3&& LockOn == false || bet == 3 && canLock == false){
         bet = 1
-    } else if (LockOn == false) {
+    } else if (canLock == false) {
         bet += 1
     }
     update();
@@ -118,6 +118,7 @@ function lock1(){
     if (canLock){
         boxes[0]["locked"] = true
         document.getElementById("lockButton1").innerHTML = "Lukittu"
+        document.getElementById("lockButton1").style.backgroundColor = "red"
         LockOn = true
     }
 }
@@ -126,6 +127,7 @@ function lock2(){
     if (canLock){
         boxes[1]["locked"] = true
         document.getElementById("lockButton2").innerHTML = "Lukittu"
+        document.getElementById("lockButton2").style.backgroundColor = "red"
         LockOn = true
     }
 }
@@ -134,6 +136,7 @@ function lock3(){
     if (canLock){
         boxes[2]["locked"] = true
         document.getElementById("lockButton3").innerHTML = "Lukittu"
+        document.getElementById("lockButton3").style.backgroundColor = "red"
         LockOn = true
     }
 }
@@ -142,6 +145,7 @@ function lock4(){
     if (canLock){
         boxes[3]["locked"] = true
         document.getElementById("lockButton4").innerHTML = "Lukittu"
+        document.getElementById("lockButton4").style.backgroundColor = "red"
         LockOn = true
     }
 }
@@ -150,8 +154,17 @@ function openLocks(){
     for(let i = 0; i< 4; i++){
         boxes[i]["locked"] = false
     }
+
+    // Tekstien korjaus alkuperäiseen
     document.getElementById("lockButton1").innerHTML = "Lukitse"
     document.getElementById("lockButton2").innerHTML = "Lukitse"
     document.getElementById("lockButton3").innerHTML = "Lukitse"
     document.getElementById("lockButton4").innerHTML = "Lukitse"
+
+    // Napit tausta värin palautus
+    document.getElementById("lockButton1").style.backgroundColor = "white"
+    document.getElementById("lockButton2").style.backgroundColor = "white"
+    document.getElementById("lockButton3").style.backgroundColor = "white"
+    document.getElementById("lockButton4").style.backgroundColor = "white"
+
 }
